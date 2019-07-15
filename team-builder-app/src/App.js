@@ -24,7 +24,7 @@ function App() {
       {list.map(member => {
         return <TeamMember member={member} key={member.name} />
       })}
-      <Form />
+      <Form setList={setList} list={list} />
     </div>
   );
 }

@@ -18,13 +18,26 @@ function App() {
     }
   ])
 
-  
+  const [memberToEdit, setMemberToEdit] = useState("");
+
+  const editMember = member => {
+    setMemberToEdit(member)
+  }
+
   return (
     <div className="App">
       {list.map(member => {
-        return <TeamMember member={member} key={member.name} />
+        return <TeamMember 
+          member={member} 
+          key={member.name} 
+          editMember={editMember}
+        />
       })}
-      <Form setList={setList} list={list} />
+      <Form 
+        setList={setList} 
+        list={list}
+        memberToEdit={memberToEdit} 
+      />
     </div>
   );
 }
